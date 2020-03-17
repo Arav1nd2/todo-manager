@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="todo-app.css" />
+    <title>Todo Manager</title>
+  </head>
+  <body>
+    <main>
+      <section class="title-block">
+        <h1>My To-do List</h1>
+        <form action="#" class="add-todo-form">
+          <input type="text" placeholder="What's next?" />
+          <input type="text" >
+            <i class="fas fa-calendar-week cal-icon"></i>
+          </input>
+          <button type="submit">Add</button>
+        </form>
+      </section>
+      <section class="due">
+        <h3>Due Today <span class="remaining">0/4</span></h3>
+        <form action="#">
+          <label for="todo-1">
+            <input type="checkbox" name="todo-1" id="todo-1" />
+            Type Something
+            <span class="overdue">Overdue</span>
+          </label>
+          <label for="todo-2" class="highlight">
+              <input type="checkbox" name="todo-2" id="todo-2" />
+              Type Something
+            <span class="delete-icon"><i class="far fa-trash-alt"></i></span>
+          </label>
+        </form>
+      </section>
+      <section class="due">
+        <h3>Due Today <span class="remaining">0/4</span></h3>
+        <form action="#">
+          <label for="todo-11">
+            <input type="checkbox" name="todo-11" id="todo-11" />
+            Type Something
+            <span class="overdue">Overdue</span>
+          </label>
+          <label for="todo-10">
+            <input type="checkbox" name="todo-10" id="todo-10" />
+            Type Something
+            <span class="delete-icon"><i class="far fa-trash-alt delete-icon"></i></span>
+          </label>
+        </form>
+      </section>
+      <section class="due">
+        <h3>Due Tomorrow <span class="remaining">0/3</span></h3>
+        <form action="#">
+          <label for="todo-3">
+            <input type="checkbox" name="todo-3" id="todo-3" />
+            Type Something
+          </label>
+        </form>
+      </section>
+      <section class="due">
+        <h3>Remaining <span class="remaining">0/4</span></h3>
+        <form action="#">
+          <label for="todo-4">
+            <input type="checkbox" name="todo-4" id="todo-4" />
+            Type Something
+            <span class="date">Jan 23</span>
+          </label>
+          <label for="todo-5">
+            <input type="checkbox" name="todo-5" id="todo-5" />
+            Type Something
+            <span class="date">Jan 23</span>
+          </label>
+          <label for="todo-6">
+            <input type="checkbox" name="todo-6" id="todo-6" />
+            Type Something
+            <span class="date">Jan 23</span>
+          </label>
+        </form>
+      </section>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/js/all.min.js"></script>
+  </body>
+</html>

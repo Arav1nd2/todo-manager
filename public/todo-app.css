@@ -1,0 +1,103 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif !important;
+  font-size: 16px;
+}
+
+h1,
+h2,
+h3,
+p {
+  color: #453c52;
+}
+h1 {
+  font-size: 48px;
+  line-height: 2;
+}
+
+h2 {
+  font-size: 34px;
+  line-height: 2;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+label {
+  font-size: 24px;
+  display: block;
+  line-height: 2;
+  padding: 0 20px;
+  max-width: 400px;
+}
+
+input {
+  border-radius: 6px;
+  border: 1px solid #bfb8cc;
+  padding: 8px 16px;
+  outline: none;
+}
+
+.add-todo-form input:nth-child(1) {
+  width: 45%;
+}
+.add-todo-form input:nth-child(2) {
+  width: 20%;
+}
+
+.add-todo-form button {
+  background: #48bb78;
+  border-radius: 4px;
+  padding: 7px 17px;
+  color: white;
+  border: 1px solid #48bb78;
+  cursor: pointer;
+  outline: none;
+}
+
+main {
+  max-width: 600px;
+  margin: 6vh auto;
+}
+
+section {
+  margin: 20px 0;
+}
+
+.overdue {
+  font-size: 14px;
+  color: #c53030;
+  margin-top: 4px;
+}
+
+.due form {
+  margin-left: 30px;
+}
+
+.cal-icon {
+  font-size: 18px;
+  color: #bfb8cc !important;
+  cursor: pointer;
+  margin-left: -30px;
+  margin-right: 12px;
+}
+
+.date {
+  color: #726a7e;
+}
+span {
+  margin-left: 10px;
+}
+
+.highlight {
+  background-color: #f1edf7;
+  border-radius: 5px;
+}
+
+label span {
+  float: right;
+  padding-top: 8px;
+}
