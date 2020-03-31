@@ -1,0 +1,26 @@
+<body>
+    <main>
+      <section class="title-block">
+        <h1>My To-do List</h1>
+        <form action="#" class="add-todo-form">
+          <input type="text" placeholder="What's next?" />
+          <input type="date" >
+            <i class="fas fa-calendar-week cal-icon"></i>
+          </input>
+          <button type="submit">Add</button>
+        </form>
+      </section>
+      <%= render partial: "todo-section", locals: {
+        title: "Overdue",
+        todos: Todo.overdue
+      }%>
+      <%= render partial: "todo-section", locals: {
+        title: "Due Today",
+        todos: Todo.due_today
+      }%>
+      <%= render partial: "todo-section", locals: {
+        title: "Due Later",
+        todos: Todo.due_later
+      }%>
+    </main>
+  </body>

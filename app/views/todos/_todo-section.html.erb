@@ -1,0 +1,22 @@
+<section class="due">
+  <h3><%= title%> <span class="remaining"><%= "#{todos.completed.length}/#{todos.length}"%></span></h3>
+  <form action="#">
+    <% todos.each do |todo|%>
+      <label for="todo-1">
+        <div>
+          <input type="checkbox" name="todo-1" id="todo-1" <%= todo.completed ? "checked": ""%> />
+          <span class="todo-text <%= todo.completed ? "striked": ""%>"><%= todo.todo_text %></span>
+        </div>
+        <div>
+          <span class="overdue">
+          <%=
+            title == "Overdue" ? "Overdue" : ""
+          %>
+          <span>
+          <span class="todo-due-date"><%= title == "Due Today" ? "" : todo.due_date.to_s(:short)%></span>
+          <span class="delete-icon"><i class="far fa-trash-alt"></i></span>
+        </div>
+      </label>
+    <%end%>
+  </form>
+</section>

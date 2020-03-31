@@ -28,10 +28,14 @@ h3 {
 
 label {
   font-size: 24px;
-  display: block;
+  display: flex;
   line-height: 2;
   padding: 0 20px;
-  max-width: 400px;
+  max-width: 500px;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px 0;
 }
 
 input {
@@ -42,7 +46,7 @@ input {
 }
 
 .add-todo-form input:nth-child(1) {
-  width: 45%;
+  width: 30%;
 }
 .add-todo-form input:nth-child(2) {
   width: 20%;
@@ -59,8 +63,8 @@ input {
 }
 
 main {
-  max-width: 600px;
-  margin: 6vh auto;
+  width: 70%;
+  margin: 6vh 30%;
 }
 
 section {
@@ -98,6 +102,36 @@ span {
 }
 
 label span {
-  float: right;
-  padding-top: 8px;
+  margin-left: 20px;
+}
+label > div {
+  display: inline !important;
+  width: 100%;
+}
+
+.todo-due-date {
+  font-size: 18px;
+  color: black;
+}
+
+.todo-text {
+  margin: 0 10%;
+  font-size: 18px;
+}
+
+.striked {
+  text-decoration: line-through;
+}
+
+.delete-icon {
+  display: none;
+}
+
+label:hover {
+  background-color: #cfcada;
+}
+
+label:hover > div .delete-icon {
+  display: inline-flex;
+  color: #453c52 !important;
 }
