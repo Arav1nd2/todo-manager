@@ -38,6 +38,17 @@ label {
   margin: 10px 0;
 }
 
+.todo_wrapper {
+  font-size: 24px;
+  display: flex;
+  line-height: 2;
+  padding: 0 20px;
+  max-width: 500px;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px 0;
+}
 input {
   border-radius: 6px;
   border: 1px solid #bfb8cc;
@@ -100,14 +111,13 @@ span {
   background-color: #f1edf7;
   border-radius: 5px;
 }
-
-label span {
+/*
+.todo_wrapper span {
   margin-left: 20px;
 }
-label > div {
+.todo_wrapper > div {
   display: inline !important;
-  width: 100%;
-}
+} */
 
 .todo-due-date {
   font-size: 18px;
@@ -127,11 +137,16 @@ label > div {
   display: none;
 }
 
-label:hover {
+.todo_wrapper:hover {
   background-color: #cfcada;
 }
 
-label:hover > div .delete-icon {
+.todo_wrapper:hover .delete-icon {
   display: inline-flex;
+  z-index: 10;
   color: #453c52 !important;
 }
+
+/* .overdue_section {
+  display: flex;
+} */

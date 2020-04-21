@@ -2,13 +2,13 @@
     <main>
       <section class="title-block">
         <h1>My To-do List</h1>
-        <form action="#" class="add-todo-form">
-          <input type="text" placeholder="What's next?" />
-          <input type="date" >
+        <%= form_with(url: "/todos", method: "post", class: "add-todo-form") do%>
+          <input type="text" placeholder="What's next?" name="todo_text" />
+          <input type="date" name = "due_date">
             <i class="fas fa-calendar-week cal-icon"></i>
           </input>
           <button type="submit">Add</button>
-        </form>
+        <% end %>
       </section>
       <%= render partial: "todo-section", locals: {
         title: "Overdue",
