@@ -1,5 +1,11 @@
 <body>
     <main>
+      <section class="user-greetings">
+        <% if current_user %>
+          Welcome <%= current_user.name%>
+          <%= link_to "Logout", logout_path, method: :post %>
+        <% end %>
+      </section>
       <section class="title-block">
         <h1>My To-do List</h1>
         <%= form_with(url: "/todos", method: "post", class: "add-todo-form") do%>

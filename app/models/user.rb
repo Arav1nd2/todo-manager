@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  def to_string
-    "#{id}.  #{name}  #{email}"
-  end
+  has_secure_password
+  has_many :todos
+  validates :email, presence: true, uniqueness: true
 end

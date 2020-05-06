@@ -1,0 +1,14 @@
+<h1>Session#new</h1>
+<p>Find me in app/views/session/new.html.erb</p>
+
+<div>
+  <h6>Welcome to Todo-Manager</h6>
+  <hr/>
+  <p>Sign Up page</p>
+
+  <%= form_with url: login_create_path , method: :post do |form| %>
+    <%= form.email_field :email %>
+    <%= form.password_field :password%>
+    <%= form.submit "Login!"%>
+  <% end %>
+</div>
