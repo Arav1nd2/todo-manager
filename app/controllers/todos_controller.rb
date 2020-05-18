@@ -1,5 +1,5 @@
 class TodosController < ApplicationController
-  skip_before_action :verify_authenticity_token
+  before_action :authenticate
 
   def index
     # render plain: Todo.all.map { |todo| todo.to_pleasent_string }.join("\n")
@@ -13,9 +13,15 @@ class TodosController < ApplicationController
 
   def create
     todo_text = params[:todo_text]
-    due_date = DateTime.parse(params[:due_date])
-    new_todo = Todo.create!(todo_text: todo_text, due_date: due_date, completed: false)
-    redirect_to todos_path
+    due_date = params[:due_date]
+    id = current_user.id
+    new_todo = Todo.new(todo_text: todo_text, due_date: due_date, completed: false, user_id: current_user.id)
+    if new_todo.save
+      redirect_to todos_path
+    else
+      flash[:todo_error] = new_todo.errors.full_messages.join(", ")
+      redirect_to todos_path
+    end
   end
 
   def update
@@ -30,7 +36,15 @@ class TodosController < ApplicationController
 
   def destroy
     id = params[:id]
-    Todo.find(id).destroy
+    Todo.where("id = ?", id).destroy_all
     redirect_to todos_path
+  end
+
+  def authenticate
+    if current_user
+      return
+    else
+      redirect_to login_path
+    end
   end
 end

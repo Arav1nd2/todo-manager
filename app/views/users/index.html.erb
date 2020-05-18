@@ -1,11 +1,14 @@
-<h1>Welcome to Todo Manager</h1>
+<div class="Homepage-wrapper">
+  <h1>Welcome to Todo Manager <i class="far fa-list-alt todo-icon"></i></h1>
+  <hr/>
+  <p>
+    If you are a new User
+    <%= link_to 'Click here', new_user_path %>
+  </p>
 
-<p>
-  If you are a new User
-  <%= link_to 'Click here', new_user_path %>
-</p>
+  <p>
+    If have an existing account
+    <%= link_to "Click here", login_path %>
+  </p>
 
-<p>
-  If have an existing account
-  <%= link_to "Click here", login_path %>
-</p>
+</div>

@@ -2,14 +2,21 @@
     <main>
       <section class="user-greetings">
         <% if current_user %>
-          Welcome <%= current_user.name%>
+          <p>Welcome <%= current_user.name%>!
+          </p>
           <%= link_to "Logout", logout_path, method: :post %>
         <% end %>
       </section>
       <section class="title-block">
         <h1>My To-do List</h1>
+        <% if flash[:todo_error] %>
+          <p class="todo-error">
+            <%= flash[:todo_error] %>
+          </p>
+        <% end %>
         <%= form_with(url: "/todos", method: "post", class: "add-todo-form") do%>
           <%= text_field_tag("todo_text",nil, placeholder: "What's next?")%>
+          <%= hidden_field("user_id",current_user.id)%>
           <input type="date" name = "due_date">
             <i class="fas fa-calendar-week cal-icon"></i>
           </input>
@@ -18,15 +25,15 @@
       </section>
       <%= render partial: "todo-section", locals: {
         title: "Overdue",
-        todos: Todo.overdue
+        todos: current_user.todos.overdue
       }%>
       <%= render partial: "todo-section", locals: {
         title: "Due Today",
-        todos: Todo.due_today
+        todos: current_user.todos.due_today
       }%>
       <%= render partial: "todo-section", locals: {
         title: "Due Later",
-        todos: Todo.due_later
+        todos: current_user.todos.due_later
       }%>
     </main>
   </body>

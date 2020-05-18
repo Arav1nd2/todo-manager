@@ -9,16 +9,13 @@ class UserController < ApplicationController
 
   def create
     # Check for empty values
-    name = params[:name].empty?
-    email = params[:email].empty?
-    password = params[:password].empty?
-    puts "#{name}, #{email}, #{password}"
-    if !name && !email && !password
-      new_user = User.create!(name: params[:name], email: params[:email], password: params[:password])
+    new_user = User.new(name: params[:name], email: params[:email], password: params[:password])
+    if new_user.save
       session[:user_id] = new_user.id
       redirect_to todos_path
     else
-      render plain: "Please enter all the required fields"
+      flash[:auth_error] = new_user.errors.full_messages.join(", ")
+      redirect_to new_user_path
     end
   end
 end

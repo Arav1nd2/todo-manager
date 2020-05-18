@@ -8,7 +8,8 @@ class SessionController < ApplicationController
       session[:user_id] = user.id
       redirect_to todos_path
     else
-      redirect_to login_path, notice: "Invalid Credentials"
+      flash[:auth_error] = "Invalid Credentials"
+      redirect_to login_path
     end
   end
 

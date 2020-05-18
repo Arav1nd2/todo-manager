@@ -1,14 +1,20 @@
-<h1>Session#new</h1>
-<p>Find me in app/views/session/new.html.erb</p>
+<div class="Homepage-wrapper">
+  <h1>Welcome to Todo Manager <i class="far fa-list-alt todo-icon"></i></h1>
 
-<div>
-  <h6>Welcome to Todo-Manager</h6>
   <hr/>
-  <p>Sign Up page</p>
-
-  <%= form_with url: login_create_path , method: :post do |form| %>
-    <%= form.email_field :email %>
-    <%= form.password_field :password%>
-    <%= form.submit "Login!"%>
-  <% end %>
+  <div class="auth-form-wrapper">
+    <h4 class="auth-title">LOGIN</h4>
+    <div class="error-wrapper">
+      <% if flash[:auth_error] %>
+        <p class="todo-error">
+          <%= flash[:auth_error] %>
+        </p>
+      <% end %>
+    </div>
+    <%= form_with url: login_create_path , method: :post do |form| %>
+      <%= form.email_field :email, placeholder: "Email" %>
+      <%= form.password_field :password, placeholder: "Password"%>
+      <%= form.submit "Login!", class: "auth-button"%>
+    <% end %>
+  </div>
 </div>

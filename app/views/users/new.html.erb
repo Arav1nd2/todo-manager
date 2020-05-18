@@ -1,12 +1,21 @@
-<div>
-  <h6>Welcome to Todo-Manager</h6>
-  <hr/>
-  <p>Sign Up page</p>
+<div class="Homepage-wrapper">
+  <h1>Welcome to Todo Manager <i class="far fa-list-alt todo-icon"></i></h1>
 
-  <%= form_with url: '/user', method: :post do |form| %>
-    <%=form.text_field :name %>
-    <%= form.email_field :email %>
-    <%= form.password_field :password%>
-    <%= form.submit "Sign-up!"%>
-  <% end %>
+  <hr/>
+  <div class="auth-form-wrapper">
+    <h4 class="auth-title">SIGN UP</h4>
+    <div class="error-wrapper">
+      <% if flash[:auth_error] %>
+        <p class="todo-error">
+          <%= flash[:auth_error] %>
+        </p>
+      <% end %>
+    </div>
+    <%= form_with url: '/user', method: :post do |form| %>
+      <%=form.text_field :name, placeholder: "Name" %>
+      <%= form.email_field :email, placeholder: "Email" %>
+      <%= form.password_field :password, placeholder: "Password"%>
+      <%= form.submit "Sign-up!", class: "auth-button"%>
+    <% end %>
+  </div>
 </div>
